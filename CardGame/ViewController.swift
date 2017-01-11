@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var gameLabel: UILabel!
@@ -20,12 +20,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var bottom2Card: UIImageView!
     @IBOutlet weak var bottom3Card: UIImageView!
     
-//    var imagesArray = [top1Card, top2Card, top3Card, bottom1Card, bottom2Card, bottom3Card]
+//    var imagesArray: [Any] = [top1Card, top2Card, top3Card, bottom1Card, bottom2Card, bottom3Card]
 
     var currentDeck: Deck!
     var playerOne: Player!
-    var currentCard: String
 
+    @IBOutlet weak var drawButton: UIButton!
+    @IBOutlet weak var discardButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gameLabel.text = "The Cardattack Game"
@@ -34,13 +37,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         playerOne.draw(deck: currentDeck)
         welcomeLabel.text = "Welcome \(playerOne.name)"
         hideCards()
+        drawButton.isHidden = true
+        discardButton.isHidden = true
+        resetButton.isHidden = true
     }
     
-
     @IBAction func dealButtonPressed(_ sender: UIButton) {
         currentDeck.shuffle()
         flipAllCards()
         showCards()
+        drawButton.isHidden = false
+        discardButton.isHidden = false
+        resetButton.isHidden = false
+    }
+    
+    @IBAction func discardButtonPressed(_ sender: UIButton) {
+        top2Card.isHidden = true
+        
     }
     
     @IBAction func drawButtonPressed(_ sender: UIButton) {
@@ -62,11 +75,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             print(imageFileName)
             top2Card.image = UIImage(named: "\(imageFileName.lowercased())")
         }
-    }
-    
-    
-    @IBAction func discardButtonPressed(_ sender: UIButton) {
-        top2Card.isHidden = true
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {

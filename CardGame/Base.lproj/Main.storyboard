@@ -88,7 +88,7 @@
                                                 <rect key="frame" x="171.5" y="0.0" width="86" height="30"/>
                                                 <state key="normal" title="Discard"/>
                                                 <connections>
-                                                    <action selector="discardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HB8-X6-5b6"/>
+                                                    <action selector="discardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nm8-kz-zDm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk4-Cj-dqj">
@@ -134,7 +134,10 @@
                         <outlet property="bottom1Card" destination="Ilc-d8-n2J" id="hzJ-8u-Zav"/>
                         <outlet property="bottom2Card" destination="aNV-RS-LeX" id="xLe-XE-k7Z"/>
                         <outlet property="bottom3Card" destination="9of-ht-yuV" id="caR-KG-s1H"/>
+                        <outlet property="discardButton" destination="n9u-lE-1FS" id="l7X-MT-xzl"/>
+                        <outlet property="drawButton" destination="5ya-Ec-h6h" id="UOu-tr-sqs"/>
                         <outlet property="gameLabel" destination="Y4e-DR-b71" id="8vx-cH-oTX"/>
+                        <outlet property="resetButton" destination="sk4-Cj-dqj" id="AvR-RM-0g0"/>
                         <outlet property="top1Card" destination="fXX-kL-db9" id="3Zt-H2-XWt"/>
                         <outlet property="top2Card" destination="O0P-D5-4H7" id="SaQ-E0-uis"/>
                         <outlet property="top3Card" destination="kg7-ta-qgz" id="Ulk-YY-VD8"/>
